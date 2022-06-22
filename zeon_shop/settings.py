@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # apps
     'applications.product',
     'applications.info',
+    'applications.help',
 
     # libraries
     'rest_framework',
