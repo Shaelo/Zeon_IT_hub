@@ -20,5 +20,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/help/', include('applications.help.urls')),
+    path('api/v1/info/', include('applications.info.urls')),
+    path('api/v1/product/', include('applications.product.urls')),
+    path('api/v1/footer/', include('applications.footer.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'applications.product',
     'applications.info',
     'applications.help',
+    'applications.footer',
 
     # libraries
     'rest_framework',
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'zeon_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'zeon_shop',
+        'NAME': 'zeon_db',
         'USER': 'ismail',
         'PASSWORD': '1',
         'HOST': 'localhost',

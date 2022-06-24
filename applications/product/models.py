@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 
 
 class Collection(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
     img = models.ImageField()
 
     def __str__(self):
@@ -31,13 +31,12 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         discount = self.sale
+
         if discount > 0:
             discount_price = (self.price*discount)/100
             self.total_price = self.price - discount_price
-
             size = self.size
             self.amount_size = ((int(size[3:5]) - int(size[0:2])) / 2) + 1
-
         else:
             self.total_price = self.price
         super(Product, self).save(*args, **kwargs)
